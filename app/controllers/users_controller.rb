@@ -67,6 +67,8 @@ class UsersController < ApplicationController
       redirect_to new_user_session_path
     elsif current_user.name == nil
       redirect_to edit_user_path(current_user)
+    elsif current_user.is_admin == true
+      redirect_to new_event_path 
     else
       redirect_to appointments_path
     end
