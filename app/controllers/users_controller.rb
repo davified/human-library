@@ -61,6 +61,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def home
+    puts current_user.inspect
+    if !current_user
+      redirect_to new_user_session_path
+    elsif current_user.name == nil
+      redirect_to edit_user_path(current_user)
+    else
+      redirect_to appointments_path
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
