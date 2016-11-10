@@ -30,17 +30,17 @@ class EventsController < ApplicationController
     no_of_slots = event_params[:no_of_slots].to_i
     interval = event_params[:duration_per_slot].to_i
     pax_capacity = event_params[:no_of_ppl_per_book].to_i
-    
-    # need to fix bug with start_time...
-    start_time = event_params[:start_time]
+    start_time = event_params["start_time(5i)"].to_time
 
+    new_time = start_time + interval.minutes
+    new_time = new_time.strftime("%I:%M%p")
 
     (1..no_of_slots).each do |i|
       @slot = Slot.new()
 
       @slot.event_id = @event.id
-      @slot.start_time = start_time
-      @slot.end_time = start_time
+      @slot.start_time = start_time + (interval * (i - 1)).minutes
+      @slot.end_time = start_time + (interval * i).minutes
       @slot.pax_capacity = pax_capacity
       @slot.is_available = true
       @slot.save!
