@@ -6,6 +6,10 @@ class AppointmentsController < ApplicationController
     @event = Event.find(1)
     @slots = Slot.where({event_id: @event.id})
     @books = Book.all
+    @books_name_only = []
+    @books.each do |b|
+      @books_name_only.push(b.user.name)
+    end
   end
 
   def batch_create
