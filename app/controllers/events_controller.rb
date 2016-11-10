@@ -25,6 +25,26 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event.save
+
+    no_of_slots = event_params[:no_of_slots].to_i
+    interval = event_params[:duration_per_slot].to_i
+    pax_capacity = event_params[:no_of_ppl_per_book].to_i
+    
+    # need to fix bug with start_time...
+    start_time = event_params[:start_time]
+
+
+    (1..no_of_slots).each do |i|
+      @slot = Slot.new()
+
+      @slot.event_id = @event.id
+      @slot.start_time = start_time
+      @slot.end_time = start_time
+      @slot.pax_capacity = pax_capacity
+      @slot.is_available = true
+      @slot.save!
+    end
 
     respond_to do |format|
       if @event.save
@@ -69,6 +89,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:date, :venue, :description)
+      params.require(:event).permit(:date, :venue, :description, :start_time, :no_of_books, :no_of_slots, :no_of_ppl_per_book, :duration_per_slot)
     end
 end

@@ -54,5 +54,8 @@ end
 # devise for user auth
 gem 'devise'
 
+# combined time select
+gem 'combined_time_select'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

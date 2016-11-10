@@ -56,6 +56,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    combined_time_select (1.0.1)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     devise (4.1.1)
@@ -183,6 +184,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.alpha5)
   byebug
   coffee-rails (~> 4.2)
+  combined_time_select
   devise
   jbuilder (~> 2.5)
   jquery-rails
