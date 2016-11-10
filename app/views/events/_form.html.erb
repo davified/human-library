@@ -12,44 +12,47 @@
 </div>
 <% end %>
 
-<div class="field">
+<!-- <div class="field form-group">
+  , {}, {class: 'form-control'}
+ -->
+
+<div class="field form-group">
     <%= f.label :date %>
     <%= f.date_select :date %>
-</div>
-
-<div class="field">
     <%= f.label :start_time %>
-    <%= f.time_select :start_time, {combined: true, minute_step: 30} %>
+    <%= f.time_select :start_time, {combined: true, minute_step: 30}%>
 </div>
 
-<div class="field">
+<div class="field form-group"></div>
+
+<div class="field form-group">
     <%= f.label :venue %>
-    <%= f.text_field :venue %>
+    <%= f.text_field :venue, {class: 'form-control'} %>
 </div>
 
-<div class="field">
+<div class="field form-group">
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, {class: 'form-control', rows: 5} %>
 </div>
 
-<div class="field">
+<div class="field form-group">
     <%= f.label :no_of_books %>
-    <%= f.number_field :no_of_books %>
+    <%= f.number_field :no_of_books, {class: 'form-control'} %>
 </div>
 
-<div class="field">
+<div class="field form-group">
     <%= f.label :no_of_slots %>
-    <%= f.number_field :no_of_slots %>
+    <%= f.number_field :no_of_slots, {class: 'form-control'} %>
 </div>
 
-<div class="field">
+<div class="field form-group">
     <%= f.label :no_of_ppl_per_book %>
-    <%= f.number_field :no_of_ppl_per_book %>
+    <%= f.number_field :no_of_ppl_per_book, {class: 'form-control'} %>
 </div>
 
-<div class="field">
+<div class="field form-group">
     <%= f.label :duration_per_slot %>
-    <%= f.number_field :duration_per_slot %>
+    <%= f.number_field :duration_per_slot, {class: 'form-control'} %>
 </div>
 
 <div class="actions">

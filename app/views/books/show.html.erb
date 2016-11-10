@@ -1,23 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag(@book.image_url, class: "medium_profile_icon") %></td>
+
 <p>
-    <strong>User:</strong>
-    <%= @book.user_id %>
+<strong>User:</strong>
+<%= @book.user.name %>
 </p>
 
 <p>
-    <strong>Category:</strong>
-    <%= @book.category_id %>
+<strong>Category:</strong>
+<%= @book.category.category %>
 </p>
 
 <p>
-    <strong>Description:</strong>
-    <%= @book.description %>
-</p>
-
-<p>
-    <strong>Image url:</strong>
-    <%= @book.image_url %>
+<strong>Description:</strong>
+<%= @book.description %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %>

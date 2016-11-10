@@ -13,9 +13,7 @@
 </p>
 <table border='1'>
     <tr>
-        <td>
-            books/slots
-        </td>
+        <td></td>
         <% @slots.each do |slot| %>
         <td>
             <%= slot.start_time.strftime("%I:%M%p") %>
@@ -35,10 +33,11 @@
         </td>
         <% @slots.each do |slot| %>
         <td>
-            <%= select_tag(:boolean, options_for_select([['True', true], ['False', false]])) %>
+            <%= select_tag(:boolean, options_for_select([['Available', true], ['Not available', false]])) %>
         </td>
         <% end %>
         <% end %>
     </tr>
-
 </table>
+<br>
+<button type="button" name="button" class='btn'>Create Schedule</button>
