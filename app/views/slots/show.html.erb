@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @slot.event %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @slot.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @slot.end_time %>
+</p>
+
+<p>
+  <strong>Pax capacity:</strong>
+  <%= @slot.pax_capacity %>
+</p>
+
+<p>
+  <strong>Is available:</strong>
+  <%= @slot.is_available %>
+</p>
+
+<%= link_to 'Edit', edit_slot_path(@slot) %> |
+<%= link_to 'Back', slots_path %>
