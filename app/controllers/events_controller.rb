@@ -46,14 +46,10 @@ class EventsController < ApplicationController
       @slot.save!
     end
 
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.save
+      redirect_to batch_new_path(@event)
+    else
+      render :new
     end
   end
 

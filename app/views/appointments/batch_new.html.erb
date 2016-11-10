@@ -1,0 +1,36 @@
+<h1>Create event schedule</h1>
+<p>
+    Date:
+    <%= @event.date %>
+</p>
+<p>
+    Venue:
+    <%= @event.venue %>
+</p>
+<p>
+    Start time:
+    <%= @event.start_time.strftime("%I:%M%p") %>
+</p>
+<table border='1'>
+    <tr>
+        <td>
+            books/slots
+        </td>
+        <% @slots.each do |slot| %>
+        <td>
+            <%= slot.start_time.strftime("%I:%M%p") %>
+        </td>
+        <% end %>
+    </tr>
+    <% @books.each do |book| %>
+    <tr>
+        <td><%= book.id %></td>
+        <% @slots.each do |slot| %>
+        <td>
+            <%= select_tag(:boolean, options_for_select([['True', true], ['False', false]])) %>
+        </td>
+        <% end %>
+        <% end %>
+    </tr>
+
+</table>

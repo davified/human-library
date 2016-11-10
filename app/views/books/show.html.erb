@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @book.user %>
+    <strong>User:</strong>
+    <%= @book.user_id %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @book.category %>
+    <strong>Category:</strong>
+    <%= @book.category_id %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @book.description %>
+    <strong>Description:</strong>
+    <%= @book.description %>
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @book.image_url %>
+    <strong>Image url:</strong>
+    <%= @book.image_url %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Edit', edit_book_path(@book) %>
+|
 <%= link_to 'Back', books_path %>

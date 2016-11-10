@@ -2,6 +2,16 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:index]
 
+  def batch_new
+    @event = Event.find(1)
+    @slots = Slot.where({event_id: @event.id})
+    @books = Book.all
+  end
+
+  def batch_create
+
+  end
+
   # GET /appointments
   # GET /appointments.json
   def index
